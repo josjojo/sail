@@ -18,7 +18,7 @@ fi
 # Determine if stdout is a terminal...
 if test -t 1; then
     # Determine if colors are supported...
-    ncolors=$(tput colors)
+    ncolors=$(tput colors 2> /dev/null)
 
     if test -n "$ncolors" && test "$ncolors" -ge 8; then
         BOLD="$(tput bold)"
